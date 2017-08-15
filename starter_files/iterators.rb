@@ -49,8 +49,17 @@ def sum_of_squares(numbers)
 end
 
 
-
-
 # Return a new array of the ordinals (1 -> 1st) of the numbers given.
 def ordinals(numbers)
+  numbers.map do |number|
+    if number % 10 == 1
+      "#{number}st"
+    elsif number % 10 == 2
+      "#{number}nd"
+    elsif number % 10 == 3
+      "#{number}rd"
+    else
+      "#{number}th"
+    end
+  end
 end
